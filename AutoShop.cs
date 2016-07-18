@@ -4,13 +4,11 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Security.Permissions;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using LeagueSharp;
 using LeagueSharp.Common;
 
-namespace AutoBuyerSharp
+namespace AutoBuyer
 {
     public enum ItemCondition
     {
@@ -76,7 +74,7 @@ namespace AutoBuyerSharp
                 return;
             if (!gotStartingItems && player.Level < 4)
             {
-                //Console.WriteLine("buye starting!");
+                //Console.WriteLine("Buying starting items");
                 foreach (var item in curBuild.startingItems)
                 {
                     player.BuyItem(item);
@@ -103,13 +101,19 @@ namespace AutoBuyerSharp
             return ObjectManager.Player.InventoryItems.Count(y => !y.IData.DisplayName.Contains("Poro")) - 2;
         }
 
+        /// <summary>
+        /// Check if inventory is full
+        /// </summary>
+        /// <returns></returns>
         private static bool inventoryFull()
         {
-            //LeagueSharp.Common.
-            //LeagueSharp.Core.
             return freeSlots() == 6;
         }
 
+        /// <summary>
+        /// Calculate the most appropriate item to purchase.
+        /// </summary>
+        /// <returns>Item ID</returns>
         private static int getBestBuyItem()
         {
             foreach (var item in curBuild.coreItems)

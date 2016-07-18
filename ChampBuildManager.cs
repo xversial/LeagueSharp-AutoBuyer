@@ -1,13 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using LeagueSharp;
 using LeagueSharp.Common;
-using SharpDX;
 
-namespace AutoBuyerSharp
+namespace AutoBuyer
 {
     class ChampBuildManager
     {
@@ -18,7 +13,7 @@ namespace AutoBuyerSharp
 
         public ChampBuildManager()
         {
-            Console.WriteLine("AutoBuyerSharp started!");
+            Console.WriteLine("AutoBuyer started!");
             CustomEvents.Game.OnGameLoad += onLoad;
         }
 
@@ -27,10 +22,10 @@ namespace AutoBuyerSharp
         private void onLoad(EventArgs args)
         {
             gameStart = now;
-            Game.PrintChat("AutoBuyerSharp by DeTuKs");
+            Game.PrintChat("LeagueSharp AutoBuyer by Xversial");
             try
             {
-                Config = new Menu("AutoBuyerSharp", "AutoBuyerSharp", true);
+                Config = new Menu("AutoBuyer", "AutoBuyer", true);
 
                 //Extra
                 Config.AddSubMenu(new Menu("Extra Sharp", "extra"));
@@ -54,7 +49,7 @@ namespace AutoBuyerSharp
 
         private void OnGameUpdate(EventArgs args)
         {
-            //dont try to buy every tiock and some delay after game start
+            //dont try to buy every tick and some delay after game start
             if (lastTick + 888 > now || gameStart + 4090 > now)
                 return;
             lastTick = now;

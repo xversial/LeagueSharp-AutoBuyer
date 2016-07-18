@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using LeagueSharp;
 
-namespace AutoBuyerSharp
+namespace AutoBuyer
 {
     public class BuildManager
     {
@@ -130,12 +127,12 @@ namespace AutoBuyerSharp
                             new ConditionalItem(ItemId.Zhonyas_Hourglass),
                             new ConditionalItem(ItemId.Void_Staff),
 
-
+                            /*
                             new ConditionalItem(ItemId.Ludens_Echo),
                             new ConditionalItem(ItemId.Abyssal_Scepter,ItemId.Zhonyas_Hourglass,ItemCondition.ENEMY_AP),
                             new ConditionalItem(ItemId.Rabadons_Deathcap),
                             new ConditionalItem(ItemId.Void_Staff,ItemId.Liandrys_Torment, ItemCondition.ENEMY_MR),
-                            new ConditionalItem(ItemId.Rylais_Crystal_Scepter),
+                            new ConditionalItem(ItemId.Rylais_Crystal_Scepter),*/
                         },
                         startingItems = new List<ItemId>
                         {
