@@ -8,7 +8,7 @@ using System.Text.RegularExpressions;
 using LeagueSharp;
 using LeagueSharp.Common;
 
-namespace AutoBuyer
+namespace AutoBuyerSharp
 {
     public enum ItemCondition
     {

@@ -2,7 +2,7 @@
 using LeagueSharp;
 using LeagueSharp.Common;
 
-namespace AutoBuyer
+namespace AutoBuyerSharp
 {
     class ChampBuildManager
     {
@@ -32,7 +32,7 @@ namespace AutoBuyer
                 Config.SubMenu("extra").AddItem(new MenuItem("buyItems", "Buy Items")).SetValue(true);
                 Config.AddToMainMenu();
 
-                Drawing.OnDraw += onDraw;
+                //Drawing.OnDraw += onDraw;
                 Game.OnUpdate += OnGameUpdate;
 
                 //Setup shop

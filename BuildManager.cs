@@ -2,7 +2,7 @@
 using System.Linq;
 using LeagueSharp;
 
-namespace AutoBuyer
+namespace AutoBuyerSharp
 {
     public class BuildManager
     {
